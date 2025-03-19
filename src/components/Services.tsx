@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Graduation, Target, Users, Rocket } from 'lucide-react';
+import { GraduationCap, Target, Users, Rocket } from 'lucide-react';
 
 const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ const Services = () => {
 
   const services = [
     {
-      icon: <Graduation className="w-10 h-10 text-white" />,
+      icon: <GraduationCap className="w-10 h-10 text-white" />,
       title: "STEM Curriculum Development",
       description: "Customized educational content aligned with national standards for schools and educational institutions."
     },
