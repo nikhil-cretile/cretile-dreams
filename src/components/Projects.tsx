@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import { 
   Carousel,
   CarouselContent,
@@ -39,21 +39,21 @@ const Projects = () => {
 
   const projects = [
     {
-      image: "https://placehold.co/800x500/cretile-blue/white?text=Project+1",
+      image: "https://placehold.co/800x500/3770B5/white?text=Project+1",
       title: "Smart City Initiative",
       description: "Students created miniature smart city models using sensors to monitor traffic, energy usage, and environmental factors.",
       location: "Franklin STEM Academy",
       age: "14-16 years"
     },
     {
-      image: "https://placehold.co/800x500/cretile-yellow/white?text=Project+2",
+      image: "https://placehold.co/800x500/FFD036/dark?text=Project+2",
       title: "Agricultural Robotics",
       description: "A project focused on automated farming solutions, including irrigation systems and crop monitoring robots.",
       location: "Greenfield High School",
       age: "16-18 years"
     },
     {
-      image: "https://placehold.co/800x500/cretile-blue/white?text=Project+3",
+      image: "https://placehold.co/800x500/3770B5/white?text=Project+3",
       title: "Healthcare Innovations",
       description: "Students developed assistive robots designed to help with healthcare monitoring and mobility support.",
       location: "Medical Preparatory School",
@@ -61,41 +61,38 @@ const Projects = () => {
     }
   ];
 
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-  };
-
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div ref={sectionRef} className="slide-in-section text-center mb-16">
-          <h2 className="section-heading">Success <span className="text-cretile-blue">Stories</span></h2>
-          <p className="section-subheading">Explore innovative projects created by students and educators using Cretile robotics kits</p>
+          <h2 className="section-heading">Success <span className="text-cretile-blue">Stories</span> & <span className="text-cretile-yellow">Innovations</span></h2>
+          <p className="section-subheading">See how educational institutions are transforming STEM education with Cretile solutions</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="slide-in-section">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl h-[400px] bg-black">
+            <div className="relative overflow-hidden rounded-2xl shadow-xl h-[400px] bg-gradient-to-r from-cretile-blue to-cretile-blue/90">
               {!showVideo ? (
                 <>
+                  <div className="absolute inset-0 bg-black/30 z-10"></div>
+                  <div className="absolute top-0 right-0 bg-cretile-yellow text-cretile-blue text-sm font-bold px-4 py-2 z-20">
+                    FEATURED
+                  </div>
                   <img 
-                    src="https://placehold.co/800x500/cretile-blue/white?text=Cretile+Explainer+Video" 
+                    src="https://placehold.co/800x500/3770B5/white?text=Cretile+Explainer+Video" 
                     alt="Cretile Explainer Video" 
                     className="w-full h-full object-cover opacity-80"
                   />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
                     <button 
                       onClick={() => setShowVideo(true)}
-                      className="bg-white/20 backdrop-blur-sm p-5 rounded-full hover:bg-white/30 transition-all duration-300 mb-4"
+                      className="bg-cretile-yellow/90 p-5 rounded-full hover:bg-cretile-yellow transition-all duration-300 mb-4 shadow-lg"
                       aria-label="Play video"
                     >
-                      <PlayCircle className="w-16 h-16 text-white" />
+                      <PlayCircle className="w-16 h-16 text-cretile-blue" />
                     </button>
-                    <h3 className="text-white text-2xl font-bold">Discover Cretile</h3>
+                    <h3 className="text-white text-2xl font-bold mb-2">Watch Our Story</h3>
+                    <p className="text-white/80 text-center max-w-sm">See how Cretile is transforming STEM education globally</p>
                   </div>
                 </>
               ) : (
@@ -112,36 +109,83 @@ const Projects = () => {
                 </div>
               )}
             </div>
+            {showVideo && (
+              <div className="flex justify-end mt-2">
+                <button 
+                  onClick={() => setShowVideo(false)}
+                  className="text-sm text-gray-600 hover:text-cretile-blue flex items-center"
+                >
+                  Close video and return to preview
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="slide-in-section" style={{ transitionDelay: "0.2s" }}>
-            <h3 className="text-2xl font-bold mb-4 text-cretile-blue">Transforming Education Through Innovation</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              <span className="text-cretile-blue">Transforming</span> <span className="text-cretile-yellow">Education</span> <span className="text-gray-900">Through Innovation</span>
+            </h3>
             <p className="text-gray-700 mb-4">
-              Cretile's robotics kits are being used in educational institutions across the globe to create groundbreaking projects that solve real-world problems.
+              Cretile partners with educational institutions worldwide to implement effective STEM programs that bridge the gap between theoretical knowledge and practical skills.
             </p>
             <p className="text-gray-700 mb-4">
-              Our comprehensive B2B solutions enable schools and organizations to implement effective STEM programs that engage students in hands-on learning while developing critical future skills.
+              Our comprehensive solutions enable schools and organizations to create future-ready students equipped with critical thinking, problem-solving, and technical skills demanded by the modern workforce.
             </p>
             <p className="text-gray-700 mb-6">
-              Watch our explainer video to see how Cretile is revolutionizing STEM education for institutional partners.
+              Watch our explainer video to discover how Cretile is revolutionizing STEM education for institutional partners through:
             </p>
 
-            <div className="bg-cretile-blue/10 p-6 rounded-xl">
-              <h4 className="font-semibold text-lg mb-2 text-cretile-blue">Key outcomes for partner institutions:</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="mr-2 text-cretile-blue">•</span>
-                  <span>94% increase in student engagement with STEM subjects</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-cretile-blue">•</span>
-                  <span>89% of partner schools report improved standardized test scores</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-cretile-blue">•</span>
-                  <span>76% growth in student participation in STEM-related extracurriculars</span>
-                </li>
-              </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="bg-cretile-blue/10 p-5 rounded-xl">
+                <h4 className="font-semibold text-lg mb-2 text-cretile-blue">For Students</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-cretile-blue">•</span>
+                    <span>Engaging hands-on learning experiences</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-cretile-blue">•</span>
+                    <span>Building future-ready technical skills</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-cretile-blue">•</span>
+                    <span>Fostering creativity and problem-solving</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-cretile-yellow/10 p-5 rounded-xl">
+                <h4 className="font-semibold text-lg mb-2 text-cretile-yellow">For Institutions</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-cretile-yellow">•</span>
+                    <span>Comprehensive curriculum integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-cretile-yellow">•</span>
+                    <span>Professional development for educators</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-cretile-yellow">•</span>
+                    <span>Measurable learning outcomes</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <a 
+                href="#contact" 
+                className="btn-primary mb-3 mr-3"
+              >
+                Partner With Us
+              </a>
+              <a 
+                href="/case-studies" 
+                className="text-cretile-blue hover:underline inline-flex items-center"
+              >
+                View all case studies <ExternalLink size={14} className="ml-1" />
+              </a>
             </div>
           </div>
         </div>
@@ -185,7 +229,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-8">
-          <a href="#" className="btn-outline">
+          <a href="#" className="btn-outline border-cretile-yellow text-cretile-yellow hover:bg-cretile-yellow hover:text-white">
             View All Projects
           </a>
         </div>

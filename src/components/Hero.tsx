@@ -42,21 +42,21 @@ const Hero = () => {
         <div ref={heroRef} className="staggered-fade-in flex flex-col-reverse md:flex-row items-center">
           <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
             <div>
-              <span className="inline-block px-3 py-1 bg-cretile-blue/10 text-cretile-blue rounded-full text-sm font-medium mb-4">
-                STEM Education Solutions for Institutions
+              <span className="inline-block px-3 py-1 bg-cretile-yellow/20 text-cretile-blue rounded-full text-sm font-medium mb-4">
+                Innovative STEM Education Solutions
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Transforming Education with <span className="text-cretile-blue">Innovative Robotics</span>
+              Transform Education With <span className="text-cretile-blue">Cutting-Edge</span> <span className="text-cretile-yellow">Robotics</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
-              Comprehensive robotics education solutions designed for schools, universities, and educational institutions to cultivate future innovators.
+              Bridge theory with practice through hands-on robotics kits that empower students to learn coding, electronics, and engineering principles.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a href="#products" className="btn-primary">
-                Institutional Solutions <ArrowRight className="inline ml-2" size={16} />
+                Explore Solutions <ArrowRight className="inline ml-2" size={16} />
               </a>
-              <a href="#contact" className="btn-outline">
+              <a href="#contact" className="btn-outline border-cretile-yellow text-cretile-yellow hover:bg-cretile-yellow hover:text-white">
                 Partner With Us
               </a>
             </div>
@@ -66,7 +66,7 @@ const Hero = () => {
                 <p className="text-sm text-gray-600">Partner Institutions</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-cretile-blue">50k+</p>
+                <p className="text-3xl font-bold text-cretile-yellow">50k+</p>
                 <p className="text-sm text-gray-600">Students Impacted</p>
               </div>
               <div>
@@ -77,12 +77,15 @@ const Hero = () => {
           </div>
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <div className="relative">
-              <div className="absolute inset-0 bg-cretile-blue/10 rounded-full filter blur-xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cretile-blue/20 to-cretile-yellow/20 rounded-full filter blur-xl animate-pulse"></div>
               <img 
                 src="https://placehold.co/600x400/3770B5/white?text=Robotics+Kit" 
                 alt="Cretile Robotics Kit" 
                 className="relative z-10 rounded-3xl shadow-xl w-full max-w-md mx-auto animate-float"
               />
+              <div className="absolute -bottom-4 -right-4 bg-cretile-yellow p-4 rounded-full shadow-lg z-20 animate-float" style={{ animationDelay: '1s' }}>
+                <span className="font-bold text-gray-900">Future-Ready Skills</span>
+              </div>
             </div>
           </div>
         </div>
