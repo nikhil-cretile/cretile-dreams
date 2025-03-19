@@ -98,42 +98,42 @@
 
 @layer components {
   .glass-effect {
-    @apply backdrop-blur-lg bg-white/40 border border-white/20 shadow-lg;
+    @apply backdrop-blur-lg bg-white/40 dark:bg-black/40 border border-white/20 dark:border-white/10 shadow-lg;
   }
   
   .btn-primary {
-    @apply rounded-full bg-cretile-blue text-white font-medium px-6 py-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+    @apply rounded-full bg-cretile-blue text-white dark:bg-cretile-blue dark:text-white font-medium px-6 py-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply rounded-full bg-cretile-yellow text-black font-medium px-6 py-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+    @apply rounded-full bg-cretile-yellow text-black dark:bg-cretile-yellow dark:text-black font-medium px-6 py-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
   }
   
   .btn-outline {
-    @apply rounded-full border-2 border-cretile-blue text-cretile-blue font-medium px-6 py-3 hover:bg-cretile-blue hover:text-white transition-all duration-300;
+    @apply rounded-full border-2 border-cretile-blue text-cretile-blue dark:border-cretile-blue dark:text-cretile-blue font-medium px-6 py-3 hover:bg-cretile-blue hover:text-white dark:hover:bg-cretile-blue dark:hover:text-white transition-all duration-300;
   }
   
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-3 text-gray-900;
+    @apply text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white;
   }
   
   .section-subheading {
-    @apply text-lg text-gray-600 mb-10 max-w-2xl mx-auto;
+    @apply text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto;
   }
 
   .feature-card {
-    @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
+    @apply bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700;
   }
   
   .product-card {
-    @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+    @apply bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
   }
 }
 
 .slide-in-section {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .slide-in-section.active {
@@ -144,7 +144,7 @@
 .staggered-fade-in > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease-out;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .staggered-fade-in.active > *:nth-child(1) { transition-delay: 0.1s; }
@@ -157,6 +157,19 @@
 .staggered-fade-in.active > * {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(0) rotate(0); }
+  75% { transform: translateY(8px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
 }
 
 /* Rolling projects animation */
@@ -180,4 +193,33 @@
 
 .rolling-content:hover {
   animation-play-state: paused;
+}
+
+/* Dark mode transitions */
+.dark .btn-primary {
+  @apply bg-cretile-yellow text-gray-900;
+}
+
+.dark .btn-secondary {
+  @apply bg-cretile-blue text-white;
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 208, 54, 0); }
+  50% { box-shadow: 0 0 15px 5px rgba(255, 208, 54, 0.4); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Scale animation */
+@keyframes scale-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.scale-bounce {
+  animation: scale-bounce 4s ease-in-out infinite;
 }

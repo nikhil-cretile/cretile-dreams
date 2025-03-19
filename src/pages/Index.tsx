@@ -11,10 +11,12 @@ import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import RollingProjects from '../components/RollingProjects';
+import Blog from '../components/Blog';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 const Index = () => {
   useEffect(() => {
-    // Intersection Observer for scroll animations
+    // Enhanced Intersection Observer with options for better animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +25,7 @@ const Index = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
     );
 
     // Target all elements with the slide-in-section class
@@ -47,19 +49,22 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <RollingProjects />
-      <Features />
-      <StemEducation />
-      <Products />
-      <Services />
-      <Projects />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen dark:bg-gray-900 transition-colors duration-300">
+        <Navbar />
+        <Hero />
+        <RollingProjects />
+        <Features />
+        <StemEducation />
+        <Products />
+        <Services />
+        <Projects />
+        <Blog />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 
