@@ -158,3 +158,20 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Rolling projects animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.rolling-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.rolling-content {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}

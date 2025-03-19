@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cretile: {
-					blue: '#0073E6',
+					blue: '#3770B5',
 					yellow: '#FFCE00'
 				}
 			},

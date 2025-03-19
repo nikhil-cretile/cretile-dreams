@@ -1,10 +1,18 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, PlayCircle } from 'lucide-react';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const Projects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,70 +77,114 @@ const Projects = () => {
           <p className="section-subheading">Explore innovative projects created by students and educators using Cretile robotics kits</p>
         </div>
 
-        <div className="relative overflow-hidden rounded-2xl shadow-xl">
-          <div 
-            className="flex transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          >
-            {projects.map((project, index) => (
-              <div key={index} className="min-w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <div className="h-64 md:h-auto">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover"
-                    />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className="slide-in-section">
+            <div className="relative overflow-hidden rounded-2xl shadow-xl h-[400px] bg-black">
+              {!showVideo ? (
+                <>
+                  <img 
+                    src="https://placehold.co/800x500/cretile-blue/white?text=Cretile+Explainer+Video" 
+                    alt="Cretile Explainer Video" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <button 
+                      onClick={() => setShowVideo(true)}
+                      className="bg-white/20 backdrop-blur-sm p-5 rounded-full hover:bg-white/30 transition-all duration-300 mb-4"
+                      aria-label="Play video"
+                    >
+                      <PlayCircle className="w-16 h-16 text-white" />
+                    </button>
+                    <h3 className="text-white text-2xl font-bold">Discover Cretile</h3>
                   </div>
-                  <div className="p-8 bg-white flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                    <p className="text-gray-600 mb-6">{project.description}</p>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium">
-                        {project.location}
-                      </span>
-                      <span className="px-3 py-1 bg-cretile-yellow/20 text-cretile-blue rounded-full text-sm font-medium">
-                        Age: {project.age}
-                      </span>
-                    </div>
-                  </div>
+                </>
+              ) : (
+                <div className="w-full h-full">
+                  <iframe 
+                    src="https://makerinmetech-my.sharepoint.com/personal/admin_makerinme_com/_layouts/15/embed.aspx?id=%2Fpersonal%2Fadmin%5Fmakerinme%5Fcom%2FDocuments%2FDrive%2FExtenal%20Shared%2FExplainerVideo%2FCretile%20Explainer%20Video%5Fupdate%2Emp4" 
+                    width="100%" 
+                    height="100%" 
+                    allow="autoplay; encrypted-media" 
+                    allowFullScreen
+                    title="Cretile Explainer Video"
+                    className="border-0"
+                  ></iframe>
                 </div>
-              </div>
-            ))}
+              )}
+            </div>
           </div>
 
-          {/* Navigation buttons */}
-          <button 
-            onClick={prevSlide} 
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors"
-            aria-label="Previous slide"
-          >
-            <ArrowLeft className="w-5 h-5 text-gray-800" />
-          </button>
-          <button 
-            onClick={nextSlide} 
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors"
-            aria-label="Next slide"
-          >
-            <ArrowRight className="w-5 h-5 text-gray-800" />
-          </button>
+          <div className="slide-in-section" style={{ transitionDelay: "0.2s" }}>
+            <h3 className="text-2xl font-bold mb-4 text-cretile-blue">Transforming Education Through Innovation</h3>
+            <p className="text-gray-700 mb-4">
+              Cretile's robotics kits are being used in educational institutions across the globe to create groundbreaking projects that solve real-world problems.
+            </p>
+            <p className="text-gray-700 mb-4">
+              Our comprehensive B2B solutions enable schools and organizations to implement effective STEM programs that engage students in hands-on learning while developing critical future skills.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Watch our explainer video to see how Cretile is revolutionizing STEM education for institutional partners.
+            </p>
 
-          {/* Dots indicators */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  activeIndex === index ? 'bg-cretile-blue w-6' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+            <div className="bg-cretile-blue/10 p-6 rounded-xl">
+              <h4 className="font-semibold text-lg mb-2 text-cretile-blue">Key outcomes for partner institutions:</h4>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2 text-cretile-blue">•</span>
+                  <span>94% increase in student engagement with STEM subjects</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-cretile-blue">•</span>
+                  <span>89% of partner schools report improved standardized test scores</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-cretile-blue">•</span>
+                  <span>76% growth in student participation in STEM-related extracurriculars</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold mb-6 text-center">Featured Student Projects</h3>
+          
+          <Carousel className="w-full">
+            <CarouselContent>
+              {projects.map((project, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-white rounded-xl overflow-hidden shadow-lg h-full">
+                    <div className="h-52 overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                      <p className="text-gray-600 mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium">
+                          {project.location}
+                        </span>
+                        <span className="px-3 py-1 bg-cretile-yellow/20 text-cretile-blue rounded-full text-sm font-medium">
+                          Age: {project.age}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:flex justify-center mt-8">
+              <CarouselPrevious className="relative -left-0 mr-4" />
+              <CarouselNext className="relative -right-0" />
+            </div>
+          </Carousel>
+        </div>
+
+        <div className="text-center mt-8">
           <a href="#" className="btn-outline">
             View All Projects
           </a>

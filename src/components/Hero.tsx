@@ -43,29 +43,43 @@ const Hero = () => {
           <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
             <div>
               <span className="inline-block px-3 py-1 bg-cretile-blue/10 text-cretile-blue rounded-full text-sm font-medium mb-4">
-                STEM Education Reimagined
+                STEM Education Solutions for Institutions
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Building Future <span className="text-cretile-blue">Innovators</span> With Robotics
+              Transforming Education with <span className="text-cretile-blue">Innovative Robotics</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
-              Plug and play robotics kits designed to inspire creativity, critical thinking, and technological innovation in young minds.
+              Comprehensive robotics education solutions designed for schools, universities, and educational institutions to cultivate future innovators.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a href="#products" className="btn-primary">
-                Explore Products <ArrowRight className="inline ml-2" size={16} />
+                Institutional Solutions <ArrowRight className="inline ml-2" size={16} />
               </a>
               <a href="#contact" className="btn-outline">
-                Contact Us
+                Partner With Us
               </a>
+            </div>
+            <div className="pt-4 flex flex-wrap gap-8 justify-center md:justify-start">
+              <div>
+                <p className="text-3xl font-bold text-cretile-blue">500+</p>
+                <p className="text-sm text-gray-600">Partner Institutions</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-cretile-blue">50k+</p>
+                <p className="text-sm text-gray-600">Students Impacted</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-cretile-blue">94%</p>
+                <p className="text-sm text-gray-600">Satisfaction Rate</p>
+              </div>
             </div>
           </div>
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <div className="relative">
               <div className="absolute inset-0 bg-cretile-blue/10 rounded-full filter blur-xl animate-pulse"></div>
               <img 
-                src="https://placehold.co/600x400/cretile-blue/white?text=Robotics+Kit" 
+                src="https://placehold.co/600x400/3770B5/white?text=Robotics+Kit" 
                 alt="Cretile Robotics Kit" 
                 className="relative z-10 rounded-3xl shadow-xl w-full max-w-md mx-auto animate-float"
               />
