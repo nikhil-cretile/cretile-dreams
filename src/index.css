@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 210 100% 45%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 47 100% 50%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -32,22 +35,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,69 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/40 border border-white/20 shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply rounded-full bg-cretile-blue text-white font-medium px-6 py-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply rounded-full bg-cretile-yellow text-black font-medium px-6 py-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply rounded-full border-2 border-cretile-blue text-cretile-blue font-medium px-6 py-3 hover:bg-cretile-blue hover:text-white transition-all duration-300;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-3 text-gray-900;
+  }
+  
+  .section-subheading {
+    @apply text-lg text-gray-600 mb-10 max-w-2xl mx-auto;
+  }
+
+  .feature-card {
+    @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
+  }
+  
+  .product-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+  }
+}
+
+.slide-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.staggered-fade-in > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.staggered-fade-in.active > *:nth-child(1) { transition-delay: 0.1s; }
+.staggered-fade-in.active > *:nth-child(2) { transition-delay: 0.2s; }
+.staggered-fade-in.active > *:nth-child(3) { transition-delay: 0.3s; }
+.staggered-fade-in.active > *:nth-child(4) { transition-delay: 0.4s; }
+.staggered-fade-in.active > *:nth-child(5) { transition-delay: 0.5s; }
+.staggered-fade-in.active > *:nth-child(6) { transition-delay: 0.6s; }
+
+.staggered-fade-in.active > * {
+  opacity: 1;
+  transform: translateY(0);
 }
