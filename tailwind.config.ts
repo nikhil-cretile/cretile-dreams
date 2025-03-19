@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,7 +64,7 @@ export default {
 				},
 				cretile: {
 					blue: '#3770B5',
-					yellow: '#FFCE00'
+					yellow: '#FFD036'
 				}
 			},
 			borderRadius: {
