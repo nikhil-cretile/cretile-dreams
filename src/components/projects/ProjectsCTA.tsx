@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProjectsCTA = () => {
   return (
@@ -11,12 +12,12 @@ const ProjectsCTA = () => {
             Our team can help you plan, implement, and document innovative STEM projects that engage students and meet your educational goals.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#" className="bg-cretile-blue text-white px-8 py-3 rounded-full text-lg font-medium transition-colors hover:bg-cretile-blue/90">
+            <Link to="/#contact" className="bg-cretile-blue text-white px-8 py-3 rounded-full text-lg font-medium transition-colors hover:bg-cretile-blue/90">
               Contact Our Project Team
-            </a>
-            <a href="#" className="bg-gray-900/10 hover:bg-gray-900/20 px-8 py-3 rounded-full text-lg font-medium transition-colors">
+            </Link>
+            <button className="bg-gray-900/10 hover:bg-gray-900/20 px-8 py-3 rounded-full text-lg font-medium transition-colors">
               Download Project Guide
-            </a>
+            </button>
           </div>
         </div>
       </div>

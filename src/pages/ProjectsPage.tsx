@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { ThemeProvider } from '../contexts/ThemeContext';
 import ProjectHero from '../components/projects/ProjectHero';
 import FeaturedProjects from '../components/projects/FeaturedProjects';
 import OtherProjects from '../components/projects/OtherProjects';
@@ -38,20 +37,18 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <Navbar />
-        
-        <ProjectHero />
-        <FeaturedProjects projects={featuredProjects} />
-        <OtherProjects projects={otherProjects} />
-        <CaseStudies caseStudies={caseStudies} />
-        <VideoShowcase />
-        <ProjectsCTA />
-        
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <Navbar />
+      
+      <ProjectHero />
+      <FeaturedProjects projects={featuredProjects} />
+      <OtherProjects projects={otherProjects} />
+      <CaseStudies caseStudies={caseStudies} />
+      <VideoShowcase />
+      <ProjectsCTA />
+      
+      <Footer />
+    </div>
   );
 };
 

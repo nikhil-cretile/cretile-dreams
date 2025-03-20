@@ -12,7 +12,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import RollingProjects from '../components/RollingProjects';
 import Blog from '../components/Blog';
-import { ThemeProvider } from '../contexts/ThemeContext';
 
 const Index = () => {
   useEffect(() => {
@@ -49,22 +48,20 @@ const Index = () => {
   }, []);
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen dark:bg-gray-900 transition-colors duration-300">
-        <Navbar />
-        <Hero />
-        <RollingProjects />
-        <Features />
-        <StemEducation />
-        <Products />
-        <Services />
-        <Projects />
-        <Blog />
-        <Testimonials />
-        <Contact />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen dark:bg-gray-900 transition-colors duration-300">
+      <Navbar />
+      <Hero />
+      <RollingProjects />
+      <Features />
+      <StemEducation />
+      <Products />
+      <Services />
+      <Projects />
+      <Blog />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </div>
   );
 };
 

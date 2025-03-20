@@ -13,15 +13,15 @@ const VideoShowcase = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe 
-              src="https://makerinmetech-my.sharepoint.com/personal/admin_makerinme_com/_layouts/15/embed.aspx?id=%2Fpersonal%2Fadmin%5Fmakerinme%5Fcom%2FDocuments%2FDrive%2FExtenal%20Shared%2FExplainerVideo%2FCretile%20Explainer%20Video%5Fupdate%2Emp4" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
               width="100%" 
-              height="600" 
+              height="100%" 
               allow="autoplay; encrypted-media" 
               allowFullScreen
               title="Cretile Explainer Video"
-              className="border-0"
+              className="border-0 absolute inset-0 w-full h-full"
             ></iframe>
           </div>
         </div>
