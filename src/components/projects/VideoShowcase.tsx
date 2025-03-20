@@ -16,12 +16,10 @@ const VideoShowcase = () => {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe 
               src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-              width="100%" 
-              height="100%" 
-              allow="autoplay; encrypted-media" 
-              allowFullScreen
               title="Cretile Explainer Video"
               className="border-0 absolute inset-0 w-full h-full"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
         </div>
