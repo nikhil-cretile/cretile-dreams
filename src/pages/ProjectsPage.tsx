@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { ArrowRight, ExternalLink, Download, Clock, MapPin, Users, Award } from 'lucide-react';
+import { ArrowRight, ExternalLink, FileDown, Clock, MapPin, Users, Award, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ThemeProvider } from '../contexts/ThemeContext';
@@ -172,7 +172,7 @@ const ProjectsPage = () => {
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button className="bg-cretile-blue hover:bg-cretile-blue/90 text-white dark:bg-cretile-yellow dark:text-gray-900 dark:hover:bg-cretile-yellow/90">
-                  Download Case Studies <Download className="ml-2 h-4 w-4" />
+                  Download Case Studies <FileDown className="ml-2 h-4 w-4" />
                 </Button>
                 <Button variant="outline" className="border-cretile-yellow text-cretile-yellow hover:bg-cretile-yellow hover:text-white dark:border-cretile-blue dark:text-cretile-blue dark:hover:bg-cretile-blue dark:hover:text-white">
                   Submit Your Project
@@ -341,7 +341,7 @@ const ProjectsPage = () => {
                       <Badge className="mb-3 bg-cretile-yellow text-gray-900">Case Study</Badge>
                       <h3 className="text-2xl font-bold mb-2">{study.title}</h3>
                       <div className="flex items-center text-sm text-white/80 mb-2">
-                        <Building size={16} className="mr-2 text-cretile-yellow" />
+                        <Building2 size={16} className="mr-2 text-cretile-yellow" />
                         {study.organization}
                       </div>
                       <div className="flex items-center text-sm text-white/80">
