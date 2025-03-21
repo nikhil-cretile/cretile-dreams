@@ -16,6 +16,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Initialize theme based on system preference or saved preference
   useEffect(() => {
+    console.log("ThemeProvider initialized");
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     
