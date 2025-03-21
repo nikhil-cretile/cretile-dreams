@@ -68,13 +68,15 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     updateThemeClass(newTheme);
   };
 
-  // Prevent flash of wrong theme by only rendering when mounted
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  // Create the context value
+  const contextValue = {
+    theme,
+    toggleTheme
+  };
 
+  // Render the provider with the context value
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
